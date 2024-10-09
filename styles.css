@@ -1,0 +1,275 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* General styles */
+body {
+    font-family: 'Raleway', sans-serif;
+    color: white; /* White text for contrast */
+    background-color: black; /* Black background */
+    line-height: 1.6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure body takes full height */
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    flex: 1;
+}
+
+/* Header */
+header {
+    background: black;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.5); /* Red shadow */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header nav {
+    display: flex; /* Use flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+header nav .logo {
+    margin-right: 20px; /* Add some space between the logo and links */
+    width: 50px; /* Set the desired width for the logo */
+    height: auto; /* Maintain aspect ratio */
+}
+
+header nav ul {
+    list-style: none; /* Remove default list style */
+    display: flex; /* Use flexbox for list items */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+    flex: 1; /* Make the ul take the remaining space */
+    justify-content: center; /* Center the list items */
+}
+
+header nav ul li {
+    margin: 0 15px; /* Spacing between links */
+}
+
+
+header nav a {
+    color: red; /* Red text */
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 5px 10px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: white; /* White text on hover */
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 150px 0;
+    text-align: center;
+}
+
+.hero-section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-section .btn {
+    display: inline-block;
+    padding: 10px 30px;
+    background: red; /* Red button */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    background: #ff4500; /* Darker red on hover */
+}
+
+/* Videos Section */
+.videos-section {
+    padding: 50px 0;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background-color: #333; /* Background color of the card */
+    color: white;           /* Text color */
+    border-radius: 10px;   /* Rounded corners */
+    overflow: hidden;      /* Ensure content doesn't overflow */
+    text-decoration: none;  /* Remove underline from links */
+    position: relative;     /* Position relative for absolute positioning of shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect for transform and shadow */
+    padding: 20px;         /* Add padding inside the card */
+    aspect-ratio: 16 / 16;
+}
+
+/* Hover effect for the video card */
+.video-card:hover {
+    transform: translateY(-10px) scale(1.05); /* Move up and scale the card */
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.7); /* Red shadow on hover */
+}
+
+.video-card img {
+    width: 100%;            /* Full width for images */
+    height: auto;          /* Maintain aspect ratio */
+    border-radius: 10px;   /* Match the card's border radius */
+}
+
+.video-card h3 {
+    color: red; /* Red title */
+    margin: 10px 0; /* Space around title */
+}
+
+.video-card p {
+    color: white; /* White description */
+    margin: 5px 0; /* Space around description */
+}
+
+/* About Section */
+.about-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 50px 0;
+    text-align: center;
+    background: #333; /* Darker background */
+}
+
+.social-links a {
+    color: red;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background: rgb(0, 0, 0); /* Ensure the background is black */
+    color: rgb(255, 255, 255);    /* White text for contrast */
+    padding: 20px 0;   /* Padding for spacing */
+    text-align: center; /* Center the text */
+    position: relative; /* Ensure it's positioned correctly */
+    z-index: 1;
+}
+
+footer p {
+    font-size: 1rem;    /* Adjust font size */
+    font-weight: bold;   /* Make text bold */
+    color: white;        /* Ensure text color is white */
+    margin: 0;          /* Remove default margin */
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none; /* Hide the navigation links on mobile view */
+    }
+
+    header nav .logo {
+        margin: 0 auto; /* Center the logo */
+        display: block; /* Ensure the logo is displayed */
+        width: 60px; /* Adjust width as needed */
+    }
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section iframe {
+        width: 90%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Shorts Section */
+.shorts-section {
+    padding: 50px 0;
+}
+
+.shorts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Set a minimum width */
+    gap: 20px;
+}
+
+.short-card {
+    background-color: #333; /* Background color of the card */
+    color: white;           /* Text color */
+    border-radius: 10px;   /* Rounded corners */
+    overflow: hidden;      /* Ensure content doesn't overflow */
+    text-decoration: none;  /* Remove underline from links */
+    position: relative;     /* Position relative for absolute positioning of shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect for transform and shadow */
+    padding: 20px;         /* Add padding inside the card */
+    height: 350px;         /* Fixed height for the shorts cards */
+}
+
+/* Hover effect for the short card */
+.short-card:hover {
+    transform: translateY(-10px) scale(1.05); /* Move up and scale the card */
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.7); /* Red shadow on hover */
+}
+
+.short-card img {
+    width: 100%;            /* Full width for images */
+    height: auto;          /* Maintain aspect ratio */
+    border-radius: 10px;   /* Match the card's border radius */
+}
+
+.short-card h3 {
+    color: rgb(255, 0, 0); /* Red title */
+    margin: 10px 0; /* Space around title */
+}
+
+.short-card p {
+    color: white; /* White description */
+    margin: 5px 0; /* Space around description */
+}
